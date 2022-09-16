@@ -1,0 +1,4 @@
+{
+    "solidity.compileUsingRemoteVersion": "latest",
+    "solidity.compilerOptimization": 200
+}
