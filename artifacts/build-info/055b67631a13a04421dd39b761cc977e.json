@@ -15,7 +15,7 @@
 				"enabled": false,
 				"runs": 200
 			},
-			"outputSelection": {
+		"outputSelection": {
 				"*": {
 					"": [
 						"ast"
