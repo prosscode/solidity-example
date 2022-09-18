@@ -5,4 +5,4 @@
 -->
 # solidity-example
 
-learning case for solidity 0.8^
+learning case for solidity ^0.8
