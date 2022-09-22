@@ -8,6 +8,7 @@ contract EtherWallet{
         owner = payable(msg.sender);
     }
 
+    // get ETH
     receive() external payable {}
 
     function withdraw(uint _amount) external {
