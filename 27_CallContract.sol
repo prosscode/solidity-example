@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract CallTestContract{
+contract CallContract{
 
     function setX(address _test,uint _x) external{
         TestContract(_test).setX(_x);
