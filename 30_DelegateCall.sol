@@ -40,7 +40,7 @@ contract DelegateCall{
     address public sender;
     uint public value;
 
-    function setVars(address _addr, uint _num) external payable{
+    function setVars(address _addr, uint _num) external payable returns(bytes memory){
         // signature call
         // (bool success, bytes memory data) = _addr.delegatecall(
         //     abi.encodeWithSignature("setVars(uint)", _num)
@@ -51,5 +51,6 @@ contract DelegateCall{
             abi.encodeWithSelector(TestDelegateCall.setVars.selector, _num)
         );
         require(success,"delegate call failed");
+        return data;
     }
 }

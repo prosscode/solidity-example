@@ -10,6 +10,10 @@ contract TestCall{
         emit Log("fallback was called");
     }
 
+    receive() external payable {
+        // custom function code
+    }
+
     function foo(string memory _message,uint _x) external payable returns(bool,uint){
         message = _message;
         x = _x;
@@ -34,7 +38,7 @@ contract AbiSignatureCall{
     
     function callNotExistMethod(address _address) external {
         (bool success, ) = _address.call(
-            abi.encodeWithSignature("notExistMethod()")
+            abi.encodeWithSignature("notExistMethod()", "call notExistMethod")
         );
         require(success,"call failed");
     }
