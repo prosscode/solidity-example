@@ -67,13 +67,11 @@ contract MultiSignatureWallet{
         required = _required;
     }
 
-    // 接收主币
     receive() external payable{
         emit Deposit(msg.sender, msg.value);
     }
 
 
-    // 提交一个交易申请
     function submit(address _to, uint _value, bytes calldata _data) 
         external onlyOwner 
     {
@@ -87,7 +85,6 @@ contract MultiSignatureWallet{
         emit Submit(transactions.length - 1);
     }
 
-    // 审批交易
     function approve(uint _txId) 
         external onlyOwner txExists(_txId) notApproved(_txId) notExecuted(_txId)
     {
@@ -95,7 +92,6 @@ contract MultiSignatureWallet{
         emit Approve(msg.sender, _txId);
     }
 
-    // 内部方法，拿到审批的数量
     function _getApprovalCount(uint _txId) private view returns(uint count){
         for(uint i = 0; i< owners.length; i++){
             if(approved[_txId][owners[i]]){
@@ -104,7 +100,6 @@ contract MultiSignatureWallet{
         }
     }
 
-    // 执行call
     function execute(uint _txId) external txExists(_txId) notExecuted(_txId){
         require(_getApprovalCount(_txId) >= required, "approval < required");
         Transaction storage transaction = transactions[_txId];
@@ -115,7 +110,6 @@ contract MultiSignatureWallet{
         emit Execute(_txId);
     }
 
-    // 撤销审批
     function revoke(uint _txId) external onlyOwner txExists(_txId) notExecuted(_txId){
         // approved的tx才能被revoke
         require(approved[_txId][msg.sender], "tx not approved");

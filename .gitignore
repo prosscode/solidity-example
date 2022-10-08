@@ -1,4 +1,4 @@
 .vscode/*
 artifacts/*
 bin/*
-
+*/build-info/*
