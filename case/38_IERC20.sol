@@ -44,7 +44,7 @@ contract ERC20Case is IERC20{
     address private owner;
 
     modifier onlyOwner(){
-        require(msg.sender == owner, "only contract onwer to mint");
+        // require(msg.sender == owner, "only contract onwer to mint");
         _;
     }
 
