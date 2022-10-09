@@ -12,6 +12,8 @@ pragma solidity ^0.8;
 5.approve(), 批准方法，把当前调用者的账户的数量批准给另一个账户，可以通过allowance()查询
 6.transferFrom(), 当前调用者可以指定从一个合约账户Token转入另一个合约账户
 */ 
+
+// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/IERC20.sol
 interface IERC20{
     event Transfer(address indexed from, address indexed to, uint amount);
 
@@ -31,7 +33,7 @@ interface IERC20{
 
 }
 
-contract ERC20 is IERC20{
+contract ERC20Case is IERC20{
     uint public override totalSupply;
     mapping(address=>uint) public override balanceOf;
     mapping(address=>mapping(address=>uint)) public override allowance;
