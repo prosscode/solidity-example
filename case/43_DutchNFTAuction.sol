@@ -66,6 +66,6 @@ contract DutchNFTAuction{
             payable(msg.sender).transfer(refund);
         }
         // 采用self destruct方法，发送此次交易所得的主币给出售者
-        selfdestruct(payable(seller));
+        selfdestruct(seller);
     }
 }
