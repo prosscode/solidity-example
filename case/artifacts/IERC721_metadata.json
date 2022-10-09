@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_nftId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "荷兰拍卖: 从起拍价开始，随着时间的流逝，价格越来越低 谁最先出价，谁可以得到藏品 <=> NFT NFT拍卖流程： 1.铸造NFT，mint，MyNFT 2.允许拍卖，approve，ERC721 3.开始拍卖，getPrice and buy，DutchNFTAuction 4.查看归属，ownerOf，ERC721",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"case/43_DutchNFTAuction.sol": "IERC721"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"case/43_DutchNFTAuction.sol": {
+			"keccak256": "0xae4718be2c34e11c807c0245e19b53bdf1cae32802f8801a772ec5d53513a2d9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aeaa0fd36ec310fc21d546bc2dcdb6bff05937e3134c2d1785c03224e6865eb5",
+				"dweb:/ipfs/QmeaE6WfGPoJUwKTw1hBmm2djP8JSysodyZddNbK2Mbwgi"
+			]
+		}
+	},
+	"version": 1
+}
