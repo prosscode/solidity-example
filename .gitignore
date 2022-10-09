@@ -1,5 +1,5 @@
 .vscode/*
-artifacts/*
 bin/*
+*/artifacts/*
 */build-info/*
 node_modules/*
