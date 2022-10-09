@@ -2,3 +2,4 @@
 artifacts/*
 bin/*
 */build-info/*
+node_modules/*
